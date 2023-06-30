@@ -1,0 +1,14 @@
+The following commands were used to generate the ourvector report at the end of the program:
+load_db small.txt
+load_dna 1.txt
+process
+search
+display
+
+This is the analysis of the report:
+	A nested char vector has been created in total 3 times in the following locations: line 260 (in the organizeData function), line 337 (in the load_db function), and line 535 in main. All the functions simply update the ourvector<ourvector<char>>strTypes which is present in main. The organizeData function inserts 3 char type vectors to strTypes Which is then updated in load_db and in main. This makes a total of 9 inserts. The vector is accessed 3 times in the process function, and 3 times in the displaySTRCounts function, and once in the load_db function. 
+	A total of 4 vectors have been created in the following locations: line 534 (in the main function), line 338 (in the load_db function), and line 259 in the organizeData function. There has been 3 inserts in organizeData. OrganizeData then copies the data back to load_db which is another 3 inserts. load_db copies data back to main so that makes another 3 inserts. Elements of this vector have been accessed 6 times in displayDatabase and then 6 times in searchDatabase. 
+	String vectors have been created on the following lines: 69, 258, 336, and 533. The string vector fileData was created to read in data from the database. Elements have been inserted and accessed when using the organizeData function.
+	A vector of chars has been created on line 103, 183, 202, 203, 264,369,400,473, 509,532, and 3 in lines 260, 337,369, 399, 535. All of these char vectors are either for strTypes vector or the dnaSample vector. So it is possible to have 1111 elements inserted and 2649 accessed.
+	A vector of ints have been made for the numSTR present in the struct PersonDNAInfo and strCounts. These vectors are present in the following lines: 49, 135, 136, 167, 302, 308, 398, 424, 490, and 531. Because these vectors have been copied back and forth between functions the number of times that have been created is approximately 38. So it is possible to have 93 elements inserted and 120 accessed.
+
